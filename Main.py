@@ -26,7 +26,10 @@ def main():
     minimax(0, 3, float('-inf'), float('inf'), True, tree, leaf_nodes, evaluated_leaves, pruned_leaves)
 
     pruned_indices = sorted(leaf - 10 for leaf in pruned_leaves)
-    print(' '.join(map(str, pruned_indices)))
+    evaluated_indices = sorted(leaf - 10 for leaf in evaluated_leaves)
+
+    print('Pruned leaf indices:', ' '.join(map(str, pruned_indices)))
+    print('Evaluated leaf indices:', ' '.join(map(str, evaluated_indices)))
 
 if __name__ == "__main__":
     main()
